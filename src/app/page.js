@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import Products from "../pages/products.js";
+import Posts from '@/pages/posts';
 
 async function getPosts() {
   const response = await fetch("https://dummyjson.com/posts?limit=10");
@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <div className={styles.blogsContainer}>
       {posts.map((post) => (
-        <Products key={post.id} {...post} />
+        <Posts key={post.id} {...post} />
       ))}
     </div>
   );
